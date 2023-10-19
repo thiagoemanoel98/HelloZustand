@@ -15,11 +15,13 @@ export function AvailableProducts() {
   return (
     <S.Container>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <S.Title>Produtos disponiveis</S.Title>
+        <S.Title>Produtos disponiveis:</S.Title>
 
         <S.Content>
           {items.map((item) => {
-            return <CardItem item={item} addToCard={addToCard} key={item.id} />;
+            return (
+              <CardItem item={item} handleAction={addToCard} type="available" />
+            );
           })}
         </S.Content>
       </ScrollView>

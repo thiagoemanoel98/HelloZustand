@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome5, AntDesign } from "@expo/vector-icons";
 
 export const Container = styled.View`
   width: 90%;
@@ -28,7 +28,7 @@ export const ItemName = styled.Text`
 
 export const ItemPrice = styled.Text`
   font-size: 14px;
-  font-weight: 400px;
+  font-weight: 400;
   color: #5856d6;
 `;
 
@@ -40,6 +40,11 @@ export const Image = styled.Image`
 `;
 
 export const CartIcon = styled(FontAwesome5)`
+  font-size: 22px;
+  color: #5856d6;
+`;
+
+export const DeleteIcon = styled(AntDesign)`
   font-size: 22px;
   color: #5856d6;
 `;

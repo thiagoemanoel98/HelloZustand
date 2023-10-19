@@ -7,10 +7,11 @@ import { Shadow } from "../../utils/shadow";
 
 interface Props {
   item: Item;
-  addToCard: (item: Item) => void;
+  type: "cart" | "available";
+  handleAction: (item: Item) => void;
 }
 
-export function CardItem({ item, addToCard }: Props) {
+export function CardItem({ item, handleAction, type }: Props) {
   return (
     <S.Container style={Shadow.applyShadow}>
       <S.SideLeft>
@@ -21,8 +22,12 @@ export function CardItem({ item, addToCard }: Props) {
         </S.NameArea>
       </S.SideLeft>
 
-      <TouchableOpacity onPress={() => addToCard(item)}>
-        <S.CartIcon name="cart-plus" />
+      <TouchableOpacity onPress={() => handleAction(item)}>
+        {type === "available" ? (
+          <S.CartIcon name="cart-plus" />
+        ) : (
+          <S.DeleteIcon name="delete" />
+        )}
       </TouchableOpacity>
     </S.Container>
   );
